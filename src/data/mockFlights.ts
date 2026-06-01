@@ -114,5 +114,65 @@ export const mockFlights: Flight[] = [
     flightDuration: '6h 45m',
     flightStatusMessage: 'Scheduled',
     progress: 0
+  },
+  {
+    flightNumber: 'SIA317',
+    airline: 'SINGAPORE AIRLINES',
+    status: 'DEPARTED',
+    statusColor: '#8b5cf6',
+    icao24: '76cd62', // Active Singapore Airlines aircraft transponder code (9V-SWB)
+    departure: {
+      city: 'LONDON',
+      code: 'LHR',
+      airport: 'Heathrow Airport',
+      time: '2026-06-01T11:25:00+01:00', // BST
+      timezone: 'BST',
+      terminal: '2',
+      gate: 'B38',
+      coordinates: { lat: 51.4700, lng: -0.4543 }
+    },
+    arrival: {
+      city: 'SINGAPORE',
+      code: 'SIN',
+      airport: 'Changi Airport',
+      time: '2026-06-02T07:30:00+08:00', // SGT
+      timezone: 'SGT',
+      terminal: '3',
+      gate: 'A15',
+      coordinates: { lat: 1.3502, lng: 103.9944 }
+    },
+    flightDuration: '13h 05m',
+    flightStatusMessage: 'En Route',
+    progress: 0.25
+  },
+  {
+    flightNumber: 'SQ317',
+    airline: 'SINGAPORE AIRLINES',
+    status: 'DEPARTED',
+    statusColor: '#8b5cf6',
+    icao24: '76cd6d', // Active Singapore Airlines aircraft transponder code (9V-SWM)
+    departure: {
+      city: 'LONDON',
+      code: 'LHR',
+      airport: 'Heathrow Airport',
+      time: '2026-06-01T11:25:00+01:00', // BST
+      timezone: 'BST',
+      terminal: '2',
+      gate: 'B38',
+      coordinates: { lat: 51.4700, lng: -0.4543 }
+    },
+    arrival: {
+      city: 'SINGAPORE',
+      code: 'SIN',
+      airport: 'Changi Airport',
+      time: '2026-06-02T07:30:00+08:00', // SGT
+      timezone: 'SGT',
+      terminal: '3',
+      gate: 'A15',
+      coordinates: { lat: 1.3502, lng: 103.9944 }
+    },
+    flightDuration: '13h 05m',
+    flightStatusMessage: 'En Route',
+    progress: 0.25
   }
 ];

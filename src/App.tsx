@@ -20,7 +20,7 @@ function App() {
       setSearchedFlight(flight);
     } else {
       setSearchedFlight(null);
-      setError(`Flight ${flightNumber} not found. Try AA123, DL456, or EK74.`);
+      setError(`Flight ${flightNumber} not found. Try AA123, DL456, EK74, SQ317, or SIA317.`);
     }
   };
 
