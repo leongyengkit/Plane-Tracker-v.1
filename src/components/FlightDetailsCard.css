@@ -1,0 +1,464 @@
+.card-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 1px; /* for gradient border */
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+  animation: fadeInUp 0.8s ease-out forwards;
+  box-shadow: var(--glass-glow);
+}
+
+.card-content {
+  background: rgba(11, 15, 25, 0.96);
+  backdrop-filter: blur(20px);
+  border-radius: 19px; /* slightly less than parent to fit inside */
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.airline-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.airline-logo-placeholder {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--accent-magenta), #ff4785);
+  border-radius: 4px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px rgba(254, 0, 161, 0.4);
+}
+
+.airline-name {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.airline-name span {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.flight-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; filter: brightness(1.2); }
+  100% { opacity: 0.4; }
+}
+
+/* Info Row Styling */
+.flight-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.info-block.departure {
+  text-align: left;
+}
+
+.info-block.arrival {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.info-block.stats-center {
+  flex: 0.8;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  align-self: center;
+}
+
+.info-block .label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.city-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.airport-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.departure .airport-info {
+  justify-content: flex-start;
+}
+
+.arrival .airport-info {
+  justify-content: flex-end;
+}
+
+.airport-code {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+.airport-name {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.time-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.time-info .time {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.time-info .timezone {
+  font-size: 0.8rem;
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.arrival .time-info .timezone {
+  color: var(--accent-magenta);
+}
+
+.terminal-info {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Stats Center block */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.stat-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stat-val.status-msg {
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+}
+
+/* Map Section Styling */
+.flight-map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.map-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-title::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 6px var(--accent-cyan);
+}
+
+/* ADS-B Status Badge */
+.adsb-status-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+}
+
+.adsb-status-badge.live {
+  background: rgba(0, 242, 254, 0.08);
+  border-color: rgba(0, 242, 254, 0.25);
+  color: var(--accent-cyan);
+}
+
+.adsb-status-badge.simulated {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+}
+
+.live-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 6px var(--accent-cyan);
+  animation: live-blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes live-blink {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Leaflet Map Wrapper */
+.leaflet-map-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+#flight-leaflet-map {
+  width: 100%;
+  height: 320px;
+  background: #090e17; /* dark matching background */
+  z-index: 1;
+}
+
+/* Custom Marker Styling inside Leaflet */
+.custom-airport-marker {
+  z-index: 1000 !important;
+}
+
+.airport-marker-content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(11, 15, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.airport-marker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.airport-marker-text {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-family: inherit;
+}
+
+/* Custom Airplane Marker inside Leaflet */
+.custom-plane-marker {
+  z-index: 2000 !important;
+}
+
+.plane-marker-container {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.plane-marker-pulse {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-cyan);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.plane-marker-pulse.active {
+  animation: plane-ring 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+
+@keyframes plane-ring {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    width: 44px;
+    height: 44px;
+    opacity: 0;
+  }
+}
+
+.plane-icon-wrapper {
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 6px currentColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Telemetry Panel styling */
+.telemetry-panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.telemetry-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.telemetry-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+}
+
+.telemetry-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 0.02em;
+}
+
+.telemetry-value.text-mono {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .card-content {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .flight-info-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .info-block.departure, .info-block.arrival {
+    text-align: center;
+    align-items: center;
+  }
+
+  .departure .airport-info, .arrival .airport-info {
+    justify-content: center;
+  }
+
+  .info-block.stats-center {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .telemetry-panel {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
